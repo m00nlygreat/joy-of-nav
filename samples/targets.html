@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Joy of Nav · 후보 요소 테스트</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; min-height: 100vh; color: #173027; background: #f3f7f1; font: 15px/1.6 system-ui, sans-serif; }
+      header { min-height: 170px; padding: 32px max(24px, calc((100vw - 920px) / 2)); color: #eef5ec; background: #1d503d; }
+      header p { max-width: 680px; color: #c8d9ca; }
+      main { width: min(920px, calc(100% - 40px)); margin: 32px auto 100px; }
+      .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+      article { min-height: 155px; padding: 20px; border: 1px solid #dbe5dc; border-radius: 16px; background: white; }
+      article p { color: #708078; font-size: 13px; }
+      a, button, [role="button"] { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 0 13px; border: 1px solid #c8d9ca; border-radius: 9px; background: #f5f9f3; color: #215b42; font: 650 12px system-ui, sans-serif; text-decoration: none; cursor: pointer; }
+      button:disabled { opacity: .4; }
+      .wide { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+      .result { padding: 10px 13px; border-radius: 9px; background: #e6f1dc; color: #356548; font-size: 12px; }
+      input[type="range"] { accent-color: #286c4c; }
+      @media (max-width: 700px) { .grid { grid-template-columns: repeat(2, 1fr); } .wide { grid-column: 1 / -1; flex-wrap: wrap; } }
+      @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } .wide { grid-column: auto; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>후보 요소 테스트 페이지</h1>
+      <p>Chrome에서 Joy of Nav를 켠 다음 컨트롤러의 왼쪽 스틱으로 방향을 정하고, X 버튼으로 요소를 순회해 보세요. 기본값에서는 화면 중심점이 원뿔 안에 있는 링크와 버튼이 후보가 됩니다.</p>
+    </header>
+    <main>
+      <div class="grid">
+        <article><strong>왼쪽 위 링크</strong><p>거리 정렬과 링크 기본 동작을 확인합니다.</p><a href="#link-activated" id="first-link">이동 링크</a></article>
+        <article><strong>중앙 버튼</strong><p>버튼 클릭 이벤트와 눌림 전환을 확인합니다.</p><button id="action-button" type="button">상태 변경</button></article>
+        <article><strong>비활성 버튼</strong><p>후보 목록에서 제외되어야 합니다.</p><button type="button" disabled>비활성 상태</button></article>
+        <article><strong>사용자 지정 버튼</strong><p>ARIA role을 사용한 요소도 후보가 됩니다.</p><div role="button" tabindex="0" id="aria-button">가상 버튼</div></article>
+        <article><strong>범위 입력</strong><p>RT가 이 입력을 네이티브 포인터처럼 조작하지는 않습니다.</p><input type="range" min="0" max="100" value="45" aria-label="샘플 범위" /></article>
+        <article><strong>스크롤 갱신</strong><p>페이지를 스크롤하면 가시 후보 위치를 다시 계산합니다.</p><a href="#bottom">아래로 이동</a></article>
+        <article class="wide"><div><strong>실행 결과</strong><p>선택 후보에서 RT를 누르면 이벤트가 기록됩니다.</p></div><output class="result" id="result">아직 동작하지 않았습니다</output></article>
+      </div>
+      <div style="height: 640px"></div>
+      <p id="bottom"><a href="#top">페이지 아래 링크</a></p>
+    </main>
+    <script>
+      const output = document.querySelector("#result");
+      document.querySelector("#action-button").addEventListener("click", (event) => {
+        output.textContent = `버튼 클릭 · isTrusted=${event.isTrusted}`;
+      });
+      document.querySelector("#aria-button").addEventListener("click", (event) => {
+        output.textContent = `ARIA 버튼 클릭 · isTrusted=${event.isTrusted}`;
+      });
+      document.querySelector("#first-link").addEventListener("click", (event) => {
+        output.textContent = `링크 클릭 · isTrusted=${event.isTrusted}`;
+      });
+    </script>
+  </body>
+</html>

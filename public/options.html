@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Joy of Nav 설정</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="options-page">
+    <main class="settings-shell">
+      <header class="settings-header">
+        <div class="brand-row">
+          <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div>
+            <p class="eyebrow">JOY OF NAV / 설정</p>
+            <h1>탐색 방식을 조절하세요</h1>
+          </div>
+        </div>
+        <p class="header-description">조작 감도, 속도 곡선, 탐색 후보 규칙은 저장 후 켜져 있는 페이지에 바로 적용됩니다.</p>
+      </header>
+
+      <form id="settingsForm" novalidate>
+        <section class="settings-card">
+          <div class="card-heading">
+            <div><p class="card-index">01 / INPUT</p><h2>입력 감도</h2></div>
+            <span class="heading-symbol" aria-hidden="true">⌁</span>
+          </div>
+
+          <div class="setting-control">
+            <div class="label-line"><label for="deadzone">스틱 데드존</label><span class="value-unit">0–1</span></div>
+            <div class="range-line"><input id="deadzoneRange" data-range-for="deadzone" type="range" min="0.05" max="0.6" step="0.01" aria-label="스틱 데드존 슬라이더" /><input id="deadzone" data-setting="deadzone" type="number" min="0.05" max="0.6" step="0.01" required /></div>
+            <p class="helper" id="deadzoneHelper">이 값 이하의 스틱 입력은 중립으로 처리합니다.</p>
+          </div>
+
+          <div class="setting-control setting-control-last">
+            <div class="label-line"><label for="triggerThreshold">트리거 입력 임계값</label><span class="value-unit">0–1</span></div>
+            <div class="range-line"><input id="triggerThresholdRange" data-range-for="triggerThreshold" type="range" min="0.1" max="1" step="0.01" aria-label="트리거 입력 임계값 슬라이더" /><input id="triggerThreshold" data-setting="triggerThreshold" type="number" min="0.1" max="1" step="0.01" required /></div>
+            <p class="helper" id="triggerThresholdHelper">spotlight가 꺼져 있을 때 L2 앞으로 이동과 R2 클릭에서 트리거가 눌린 것으로 판정하는 기준입니다.</p>
+          </div>
+        </section>
+
+        <section class="settings-card">
+          <div class="card-heading">
+            <div><p class="card-index">02 / BEHAVIOR</p><h2>탐색 동작</h2></div>
+            <span class="heading-symbol" aria-hidden="true">↗</span>
+          </div>
+          <div class="setting-control">
+            <div class="label-line"><label for="spotlightArrivalSize">도착 크기</label><span class="value-unit">화면 짧은 변 (%)</span></div>
+            <div class="range-line"><input id="spotlightArrivalSizeRange" data-range-for="spotlightArrivalSize" type="range" min="0" max="100" step="1" aria-label="도착 크기 슬라이더" /><input id="spotlightArrivalSize" data-setting="spotlightArrivalSize" type="number" min="0" max="100" step="1" required /></div>
+            <p class="helper" id="spotlightArrivalSizeHelper">화면 가장자리까지 뻗는 spotlight의 도착 쪽 폭입니다.</p>
+          </div>
+          <div class="setting-control">
+            <div class="label-line"><label for="spotlightStartSize">시작 크기</label><span class="value-unit">화면 짧은 변 (%)</span></div>
+            <div class="range-line"><input id="spotlightStartSizeRange" data-range-for="spotlightStartSize" type="range" min="0" max="100" step="1" aria-label="시작 크기 슬라이더" /><input id="spotlightStartSize" data-setting="spotlightStartSize" type="number" min="0" max="100" step="1" required /></div>
+            <p class="helper" id="spotlightStartSizeHelper">화면 중앙 원형 캡의 지름입니다. 0%면 캡이 없고, 도착 크기와 같으면 폭이 일정합니다.</p>
+          </div>
+          <div class="select-control">
+            <label for="neutralBehavior">스틱 중립 시</label>
+            <select id="neutralBehavior" data-setting="neutralBehavior">
+              <option value="retain">탐색 후보와 현재 선택 유지</option>
+              <option value="clear">탐색 후보와 현재 선택 지우기</option>
+            </select>
+          </div>
+          <div class="select-control">
+            <label for="candidateStart">탐색 후보 목록 변경 시</label>
+            <select id="candidateStart" data-setting="candidateStart">
+              <option value="first">첫 탐색 후보부터 순회</option>
+              <option value="preserve">현재 선택 유지, 없으면 첫 탐색 후보</option>
+            </select>
+          </div>
+          <div class="select-control">
+            <label for="candidateNumberVisibility">순번 표시</label>
+            <select id="candidateNumberVisibility" data-setting="candidateNumberVisibility">
+              <option value="show">표시</option>
+              <option value="hide">비표시</option>
+            </select>
+          </div>
+          <div class="select-control">
+            <label for="controlGuideVisibility">하단 조작 가이드</label>
+            <select id="controlGuideVisibility" data-setting="controlGuideVisibility" aria-describedby="controlGuideVisibilityHelper">
+              <option value="show">표시</option>
+              <option value="hide">비표시</option>
+            </select>
+            <p class="helper" id="controlGuideVisibilityHelper">spotlight 탐색 또는 Y 유지 중 Xbox 컨트롤러 조작을 안내합니다.</p>
+          </div>
+          <div class="select-control select-control-last">
+            <label for="inclusionMode">spotlight 포함 판정</label>
+            <select id="inclusionMode" data-setting="inclusionMode">
+              <option value="center">요소 중심점이 spotlight 안에 있을 때</option>
+              <option value="intersects">요소 영역이 spotlight와 만날 때</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="settings-card">
+          <div class="card-heading">
+            <div><p class="card-index">03 / ORDER</p><h2>탐색 후보 순서</h2></div>
+            <span class="heading-symbol" aria-hidden="true">↓</span>
+          </div>
+          <div class="select-control">
+            <label for="distanceMode">거리 계산</label>
+            <select id="distanceMode" data-setting="distanceMode">
+              <option value="center">요소 중심점까지의 거리</option>
+              <option value="nearest">요소 영역에서 가장 가까운 점까지의 거리</option>
+            </select>
+          </div>
+          <div class="select-control select-control-last">
+            <label for="tieBreak">거리가 같을 때</label>
+            <select id="tieBreak" data-setting="tieBreak">
+              <option value="dom">페이지 순서</option>
+              <option value="top-left">위쪽, 왼쪽 순</option>
+            </select>
+          </div>
+          <div class="setting-control">
+            <div class="label-line"><label for="rightStickCandidateStepDegrees">후보 전환에 필요한 R스틱 회전량</label><span class="value-unit">도/후보</span></div>
+            <div class="range-line"><input id="rightStickCandidateStepDegreesRange" data-range-for="rightStickCandidateStepDegrees" type="range" min="15" max="180" step="5" aria-label="R스틱 후보 전환 회전량 슬라이더" /><input id="rightStickCandidateStepDegrees" data-setting="rightStickCandidateStepDegrees" type="number" min="15" max="180" step="5" required /></div>
+            <p class="helper" id="rightStickCandidateStepDegreesHelper">최대 기울기에서 이 각도만큼 돌릴 때 후보를 하나 전환합니다. 기본 70°입니다.</p>
+          </div>
+        </section>
+
+        <section class="settings-card speed-curve-card">
+          <div class="card-heading">
+            <div><p class="card-index">04 / SPEED CURVE</p><h2>Y + L스틱 스크롤 속도</h2></div>
+            <span class="heading-symbol" aria-hidden="true">⌁</span>
+          </div>
+          <div class="setting-control maximum-speed-control">
+            <div class="label-line"><label for="scrollMaxSpeed">최대 스크롤 속도</label><span class="value-unit">픽셀/초</span></div>
+            <div class="range-line"><input id="scrollMaxSpeedRange" data-range-for="scrollMaxSpeed" type="range" min="100" max="4000" step="10" aria-label="최대 스크롤 속도 슬라이더" /><input id="scrollMaxSpeed" data-setting="scrollMaxSpeed" type="number" min="100" max="4000" step="10" required /></div>
+            <p class="helper" id="scrollMaxSpeedHelper">Y+L스틱은 초당 1회전·최대 기울기에서 이 속도에 도달합니다. 십자키 대각선 입력을 포함해 스크롤 최대 속도로 적용됩니다.</p>
+          </div>
+          <p class="curve-helper">Y를 누른 채 L스틱을 돌릴 때 적용합니다. 그래프의 점을 끌어 곡선을 조절하세요. 점선은 선형 속도입니다.</p>
+          <svg class="speed-curve-chart" viewBox="0 0 320 200" preserveAspectRatio="none" data-speed-curve-chart="scrollSpeedCurve" role="group" aria-label="Y와 L스틱 스크롤 속도 곡선 편집">
+            <defs><linearGradient id="scrollCurveFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#81bd91" stop-opacity=".28" /><stop offset="100%" stop-color="#81bd91" stop-opacity=".02" /></linearGradient></defs>
+            <path class="curve-grid" d="M40 20V155H310 M40 122.5H310 M40 87.5H310 M40 55H310 M107.5 20V155 M175 20V155 M242.5 20V155 M310 20V155" />
+            <path class="curve-area" data-speed-curve-area="scrollSpeedCurve" d="M40 155 C62.5 150.5 85 147.5 107.5 141.5 C130 135.5 152.5 125.6 175 114.5 C197.5 103.4 220 86.9 242.5 71.3 C265 55.2 287.5 37.6 310 20 L310 155 L40 155 Z" />
+            <path class="curve-reference" d="M40 155L310 20" />
+            <path data-speed-curve-path="scrollSpeedCurve" d="M40 155 C62.5 150.5 85 147.5 107.5 141.5 C130 135.5 152.5 125.6 175 114.5 C197.5 103.4 220 86.9 242.5 71.3 C265 55.2 287.5 37.6 310 20" />
+            <text class="curve-axis-label" x="8" y="23">100</text><text class="curve-axis-label" x="17" y="90">50</text><text class="curve-axis-label" x="25" y="158">0</text>
+            <text class="curve-tick-label" x="34" y="172">0</text><text class="curve-tick-label" x="98" y="172">25</text><text class="curve-tick-label" x="165" y="172">50</text><text class="curve-tick-label" x="232" y="172">75</text><text class="curve-tick-label" x="294" y="172">100</text>
+            <text class="curve-axis-caption" x="132" y="194">스틱 입력 (%)</text><text class="curve-axis-caption curve-speed-caption" transform="rotate(-90 9 88)" x="9" y="88">속도 (%)</text>
+            <text class="curve-value-label" data-speed-curve-label="scrollSpeedCurve" data-curve-index="1" x="107.5" y="132">10%</text>
+            <text class="curve-value-label" data-speed-curve-label="scrollSpeedCurve" data-curve-index="2" x="175" y="105">30%</text>
+            <text class="curve-value-label" data-speed-curve-label="scrollSpeedCurve" data-curve-index="3" x="242.5" y="62">62%</text>
+            <circle class="curve-endpoint" data-speed-curve-dot="scrollSpeedCurve" data-curve-index="0" data-value="0" cx="40" cy="155" r="4" aria-hidden="true" />
+            <circle class="curve-handle" data-speed-curve-dot="scrollSpeedCurve" data-curve-index="1" data-value="10" cx="107.5" cy="141.5" r="7" tabindex="0" role="slider" aria-orientation="vertical" aria-label="25% 입력에서의 스크롤 속도" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10" aria-valuetext="25% 입력, 속도 10%" />
+            <circle class="curve-handle" data-speed-curve-dot="scrollSpeedCurve" data-curve-index="2" data-value="30" cx="175" cy="114.5" r="7" tabindex="0" role="slider" aria-orientation="vertical" aria-label="50% 입력에서의 스크롤 속도" aria-valuemin="0" aria-valuemax="100" aria-valuenow="30" aria-valuetext="50% 입력, 속도 30%" />
+            <circle class="curve-handle" data-speed-curve-dot="scrollSpeedCurve" data-curve-index="3" data-value="62" cx="242.5" cy="71.3" r="7" tabindex="0" role="slider" aria-orientation="vertical" aria-label="75% 입력에서의 스크롤 속도" aria-valuemin="0" aria-valuemax="100" aria-valuenow="62" aria-valuetext="75% 입력, 속도 62%" />
+            <circle class="curve-endpoint" data-speed-curve-dot="scrollSpeedCurve" data-curve-index="4" data-value="100" cx="310" cy="20" r="4" aria-hidden="true" />
+          </svg>
+          <div class="curve-readouts" aria-label="스크롤 곡선 조절값">
+            <div><span>25% 입력</span><output data-speed-curve-readout="scrollSpeedCurve" data-curve-index="1">10%</output></div>
+            <div><span>50% 입력</span><output data-speed-curve-readout="scrollSpeedCurve" data-curve-index="2">30%</output></div>
+            <div><span>75% 입력</span><output data-speed-curve-readout="scrollSpeedCurve" data-curve-index="3">62%</output></div>
+          </div>
+          <p class="helper curve-footer-helper">시작·끝점은 고정됩니다. 점을 선택한 뒤 방향키로도 조절할 수 있습니다.</p>
+        </section>
+
+        <section class="settings-card speed-curve-card">
+          <div class="card-heading">
+            <div><p class="card-index">05 / SPEED CURVE</p><h2>R스틱 가상 커서 속도</h2></div>
+            <span class="heading-symbol" aria-hidden="true">↗</span>
+          </div>
+          <div class="setting-control maximum-speed-control">
+            <div class="label-line"><label for="pointerMaxSpeed">최대 가상 커서 속도</label><span class="value-unit">픽셀/초</span></div>
+            <div class="range-line"><input id="pointerMaxSpeedRange" data-range-for="pointerMaxSpeed" type="range" min="100" max="3000" step="10" aria-label="최대 가상 커서 속도 슬라이더" /><input id="pointerMaxSpeed" data-setting="pointerMaxSpeed" type="number" min="100" max="3000" step="10" required /></div>
+            <p class="helper" id="pointerMaxSpeedHelper">속도 곡선이 100%일 때 가상 커서가 이동하는 최대 거리입니다.</p>
+          </div>
+          <p class="curve-helper">R스틱으로 가상 커서를 움직일 때 적용합니다. 그래프의 점을 끌어 곡선을 조절하세요. 점선은 선형 속도입니다.</p>
+          <svg class="speed-curve-chart" viewBox="0 0 320 200" preserveAspectRatio="none" data-speed-curve-chart="pointerSpeedCurve" role="group" aria-label="R스틱 가상 커서 속도 곡선 편집">
+            <defs><linearGradient id="pointerCurveFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#81bd91" stop-opacity=".28" /><stop offset="100%" stop-color="#81bd91" stop-opacity=".02" /></linearGradient></defs>
+            <path class="curve-grid" d="M40 20V155H310 M40 122.5H310 M40 87.5H310 M40 55H310 M107.5 20V155 M175 20V155 M242.5 20V155 M310 20V155" />
+            <path class="curve-area" data-speed-curve-area="pointerSpeedCurve" d="M40 155 C62.5 151.4 85 149.4 107.5 144.2 C130 139.1 152.5 128.5 175 117.2 C197.5 105.8 220 87.4 242.5 71.3 C265 55.2 287.5 37.6 310 20 L310 155 L40 155 Z" />
+            <path class="curve-reference" d="M40 155L310 20" />
+            <path data-speed-curve-path="pointerSpeedCurve" d="M40 155 C62.5 151.4 85 149.4 107.5 144.2 C130 139.1 152.5 128.5 175 117.2 C197.5 105.8 220 87.4 242.5 71.3 C265 55.2 287.5 37.6 310 20" />
+            <text class="curve-axis-label" x="8" y="23">100</text><text class="curve-axis-label" x="17" y="90">50</text><text class="curve-axis-label" x="25" y="158">0</text>
+            <text class="curve-tick-label" x="34" y="172">0</text><text class="curve-tick-label" x="98" y="172">25</text><text class="curve-tick-label" x="165" y="172">50</text><text class="curve-tick-label" x="232" y="172">75</text><text class="curve-tick-label" x="294" y="172">100</text>
+            <text class="curve-axis-caption" x="132" y="194">스틱 입력 (%)</text><text class="curve-axis-caption curve-speed-caption" transform="rotate(-90 9 88)" x="9" y="88">속도 (%)</text>
+            <text class="curve-value-label" data-speed-curve-label="pointerSpeedCurve" data-curve-index="1" x="107.5" y="135">8%</text>
+            <text class="curve-value-label" data-speed-curve-label="pointerSpeedCurve" data-curve-index="2" x="175" y="108">28%</text>
+            <text class="curve-value-label" data-speed-curve-label="pointerSpeedCurve" data-curve-index="3" x="242.5" y="62">62%</text>
+            <circle class="curve-endpoint" data-speed-curve-dot="pointerSpeedCurve" data-curve-index="0" data-value="0" cx="40" cy="155" r="4" aria-hidden="true" />
+            <circle class="curve-handle" data-speed-curve-dot="pointerSpeedCurve" data-curve-index="1" data-value="8" cx="107.5" cy="144.2" r="7" tabindex="0" role="slider" aria-orientation="vertical" aria-label="25% 입력에서의 가상 커서 속도" aria-valuemin="0" aria-valuemax="100" aria-valuenow="8" aria-valuetext="25% 입력, 속도 8%" />
+            <circle class="curve-handle" data-speed-curve-dot="pointerSpeedCurve" data-curve-index="2" data-value="28" cx="175" cy="117.2" r="7" tabindex="0" role="slider" aria-orientation="vertical" aria-label="50% 입력에서의 가상 커서 속도" aria-valuemin="0" aria-valuemax="100" aria-valuenow="28" aria-valuetext="50% 입력, 속도 28%" />
+            <circle class="curve-handle" data-speed-curve-dot="pointerSpeedCurve" data-curve-index="3" data-value="62" cx="242.5" cy="71.3" r="7" tabindex="0" role="slider" aria-orientation="vertical" aria-label="75% 입력에서의 가상 커서 속도" aria-valuemin="0" aria-valuemax="100" aria-valuenow="62" aria-valuetext="75% 입력, 속도 62%" />
+            <circle class="curve-endpoint" data-speed-curve-dot="pointerSpeedCurve" data-curve-index="4" data-value="100" cx="310" cy="20" r="4" aria-hidden="true" />
+          </svg>
+          <div class="curve-readouts" aria-label="가상 커서 곡선 조절값">
+            <div><span>25% 입력</span><output data-speed-curve-readout="pointerSpeedCurve" data-curve-index="1">8%</output></div>
+            <div><span>50% 입력</span><output data-speed-curve-readout="pointerSpeedCurve" data-curve-index="2">28%</output></div>
+            <div><span>75% 입력</span><output data-speed-curve-readout="pointerSpeedCurve" data-curve-index="3">62%</output></div>
+          </div>
+          <p class="helper curve-footer-helper">시작·끝점은 고정됩니다. 점을 선택한 뒤 방향키로도 조절할 수 있습니다.</p>
+        </section>
+
+        <section class="input-info-card">
+          <span class="note-mark">i</span>
+          <div><h2>표준 게임패드 입력</h2><p>spotlight 중에는 A로 현재 선택 요소에 Enter를 보내고 B로 오버레이를 취소합니다. L1은 후보 역순, L2와 X는 정순으로 순회합니다. R스틱은 설정한 회전량마다 후보를 한 칸씩 이동하며, 시계 방향은 정순·반시계 방향은 역순입니다. L3는 오버레이를 고정·해제합니다. 평상시에는 X로 스페이스 바를 입력하고, R스틱 가상 커서와 마우스 클릭, 화살표·Enter·Escape 및 브라우저 뒤로/앞으로를 사용합니다. Y를 누르면 spotlight와 고정을 취소하고, 십자키와 L스틱 회전이 커서 위치의 휠 조작으로 바뀝니다. Y 모드에서 L1/L2는 이전/다음 탭, A/B는 Enter/Escape로 동작합니다. 입력은 활성 페이지에서 처리됩니다.</p></div>
+        </section>
+
+        <footer class="settings-footer">
+          <div class="save-status" id="saveStatus" aria-live="polite"><span class="save-dot"></span><span>설정을 불러오는 중</span></div>
+          <button class="secondary-button" id="resetButton" type="button">기본값 복원</button>
+        </footer>
+      </form>
+    </main>
+    <script src="extension/settings.js"></script>
+  </body>
+</html>

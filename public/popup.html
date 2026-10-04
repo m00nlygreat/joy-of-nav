@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Joy of Nav</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="popup-page">
+    <main class="popup-shell">
+      <header class="brand-row">
+        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div>
+          <p class="eyebrow">GAMEPAD NAVIGATION</p>
+          <h1>Joy of Nav</h1>
+        </div>
+        <span class="prototype-tag">PROTOTYPE</span>
+      </header>
+
+      <section class="status-card" aria-live="polite">
+        <div class="status-icon" id="statusIcon" aria-hidden="true">●</div>
+        <div class="status-copy">
+          <p class="status-title" id="statusTitle">현재 페이지 확인 중</p>
+          <p class="status-description" id="statusDescription">게임패드 탐색 상태를 확인합니다.</p>
+        </div>
+      </section>
+
+      <button class="primary-button" id="toggleButton" type="button" disabled>이 페이지에서 켜기</button>
+
+      <section class="howto-card">
+        <div class="section-heading"><span class="section-dot"></span><h2>빠른 사용법</h2></div>
+        <div class="control-row"><span class="control-key stick-key">L</span><span>스틱으로 탐색 방향 지정</span></div>
+        <div class="control-row"><span class="control-key stick-key">L3</span><span>방향 오버레이 고정·해제</span></div>
+        <div class="control-row"><span class="control-key face-key">X</span><span>탐색 후보 순회·웹 포커스 이동</span></div>
+        <div class="control-row"><span class="control-key stick-key">L1 / L2</span><span>spotlight 중 후보 역순 / 정순 순회</span></div>
+        <div class="control-row"><span class="control-key face-key">A / B</span><span>현재 선택 요소 실행 / 오버레이 취소</span></div>
+        <div class="control-row"><span class="control-key stick-key">R</span><span>가상 커서 이동 · R2 클릭 · spotlight 중 회전해 후보 순회</span></div>
+        <div class="control-row"><span class="control-key face-key">Y</span><span>spotlight 취소 · 누른 채 십자키/L스틱 휠</span></div>
+      </section>
+
+      <aside class="prototype-note">
+        <span class="note-mark">i</span>
+        <p>중립에서는 오버레이가 숨겨집니다. L3로 고정하면 A 실행 전까지 유지됩니다. 가상 커서는 운영체제 마우스 포인터와 별도로 움직입니다.</p>
+      </aside>
+
+      <footer class="popup-footer">
+        <span id="pageLabel">활성 탭</span>
+        <button class="text-button" id="settingsButton" type="button">설정 <span aria-hidden="true">↗</span></button>
+      </footer>
+    </main>
+    <script src="extension/popup.js"></script>
+  </body>
+</html>

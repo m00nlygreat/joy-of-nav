@@ -1,0 +1,17 @@
+{
+  "name": "joy-of-nav-prototype",
+  "version": "0.6.26",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "package": "npm run build && powershell -NoProfile -ExecutionPolicy Bypass -File tools/package.ps1",
+    "demo": "node tools/serve.mjs"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.1.39",
+    "esbuild": "^0.25.10",
+    "typescript": "^5.9.2"
+  }
+}
