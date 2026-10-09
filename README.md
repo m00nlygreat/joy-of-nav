@@ -1,4 +1,4 @@
-# Joy of Nav 프로토타입
+# Joy of Nav
 
 표준 게임패드로 브라우저 페이지를 탐색하는 Chrome Manifest V3 확장입니다. 포커스된 탭 하나가 게임패드 입력을 처리합니다. 평상시 X로 스페이스 바를 입력하고, L스틱 spotlight 중에는 X로 탐색 후보를 순회합니다. L3 고정과 일반 브라우징용 가상 커서 및 키 입력 매핑도 제공합니다.
 
@@ -14,7 +14,7 @@ npm run build
 npm run package
 ```
 
-Chrome에서 `chrome://extensions`를 열고 개발자 모드를 켠 뒤 `dist/` 폴더를 **압축해제된 확장 프로그램을 로드**로 불러오세요. 모든 지원 사이트에서 실행하려면 확장 세부 정보의 사이트 접근 범위를 모든 사이트로 허용합니다. 최신 패키지는 `release/joy-of-nav-prototype-latest.zip`입니다. 빌드할 때마다 버전별 ZIP과 최신 ZIP을 함께 갱신합니다.
+Chrome에서 `chrome://extensions`를 열고 개발자 모드를 켠 뒤 `dist/` 폴더를 **압축해제된 확장 프로그램을 로드**로 불러오세요. 모든 지원 사이트에서 실행하려면 확장 세부 정보의 사이트 접근 범위를 모든 사이트로 허용합니다. 최신 패키지는 `release/joy-of-nav-latest.zip`입니다. 빌드할 때마다 버전별 ZIP과 최신 ZIP을 함께 갱신합니다.
 
 Chrome은 `<all_urls>`가 지정한 지원 URL에 스크립트를 자동 주입합니다. `chrome://` 같은 브라우저 내부 페이지에서는 실행할 수 없고 `file://` 페이지는 확장 세부 정보에서 파일 URL 접근을 허용해야 합니다. 확장을 새로 설치하거나 업데이트한 직후 열려 있던 탭은 한 번 새로고침해야 합니다. 툴바 팝업에서 현재 문서 입력을 일시 중지·재개할 수 있습니다.
 
@@ -99,3 +99,7 @@ Y를 누른 채 L스틱을 돌릴 때의 스크롤과 평상시 R스틱 가상 �
 -   [Chrome DevTools Protocol: Input](https://chromedevtools.github.io/devtools-protocol/tot/Input/)
     
 -   [MDN: Event.isTrusted](https://developer.mozilla.org/en-US/docs/Web/API/Event/isTrusted)
+
+## 개인정보 처리방침
+
+[개인정보 처리방침](https://m00nlygreat.github.io/joy-of-nav/)

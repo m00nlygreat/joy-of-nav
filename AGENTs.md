@@ -11,4 +11,4 @@
 ## 배포 산출물
 
 - 확장 프로그램 구현을 수정할 때는 `package.json`과 `public/manifest.json`의 `version`을 함께 올린다.
-- 구현 변경 후에는 `npm run package`로 버전별 ZIP과 `release/joy-of-nav-prototype-latest.zip`을 최신 빌드로 갱신한다.
+- 구현 변경 후에는 `npm run package`로 버전별 ZIP과 `release/joy-of-nav-latest.zip`을 최신 빌드로 갱신한다.

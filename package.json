@@ -1,6 +1,6 @@
 {
-  "name": "joy-of-nav-prototype",
-  "version": "0.6.26",
+  "name": "joy-of-nav",
+  "version": "0.6.28",
   "private": true,
   "type": "module",
   "scripts": {

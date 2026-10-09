@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Joy of Nav Chrome 확장 프로그램의 개인정보 처리방침" />
+    <meta name="theme-color" content="#216e53" />
+    <title>개인정보 처리방침 · Joy of Nav</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Inter, Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+        color: #172321;
+        background: #f5f8f4;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        --green: #216e53;
+        --lime: #c8ee72;
+        --muted: #68766e;
+        --line: #e1e9e1;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; }
+      main { width: min(100% - 32px, 820px); margin: 52px auto 72px; }
+      header { display: flex; align-items: center; gap: 14px; margin-bottom: 30px; }
+      .mark { display: grid; grid-template-columns: repeat(3, 9px); align-items: center; justify-content: center; gap: 5px; width: 48px; height: 48px; flex: 0 0 auto; border-radius: 15px; background: var(--green); }
+      .mark i { display: block; width: 9px; border-radius: 8px; background: var(--lime); }
+      .mark i:nth-child(1) { height: 20px; }
+      .mark i:nth-child(2) { height: 30px; }
+      .mark i:nth-child(3) { height: 16px; }
+      .eyebrow { margin: 0 0 4px; color: #748178; font-size: 10px; font-weight: 750; letter-spacing: .14em; }
+      h1 { margin: 0; font-size: clamp(26px, 5vw, 36px); letter-spacing: -.045em; }
+      .updated { margin: 0 0 28px 62px; color: var(--muted); font-size: 13px; }
+      article { padding: clamp(22px, 5vw, 42px); border: 1px solid var(--line); border-radius: 22px; background: #fff; box-shadow: 0 18px 48px rgba(30, 49, 41, .06); }
+      .summary { margin: 0 0 30px; padding: 17px 18px; border: 1px solid #e5edda; border-radius: 14px; background: #f5f8ec; color: #405242; font-size: 14px; line-height: 1.75; }
+      h2 { margin: 32px 0 12px; font-size: 18px; letter-spacing: -.025em; }
+      h2:first-of-type { margin-top: 0; }
+      h3 { margin: 18px 0 7px; font-size: 14px; }
+      p, li { color: #46544c; font-size: 14px; line-height: 1.8; }
+      p { margin: 0 0 12px; }
+      ul { margin: 8px 0 14px; padding-left: 22px; }
+      li + li { margin-top: 5px; }
+      strong { color: #263b31; }
+      a { color: var(--green); text-underline-offset: 3px; }
+      .contact { padding-top: 20px; border-top: 1px solid var(--line); }
+      footer { padding: 18px 8px 0; color: #849087; text-align: center; font-size: 11px; }
+      @media (max-width: 560px) {
+        main { margin: 28px auto 44px; }
+        .updated { margin-left: 0; }
+        article { border-radius: 17px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <div>
+          <p class="eyebrow">JOY OF NAV</p>
+          <h1>개인정보 처리방침</h1>
+        </div>
+      </header>
+      <p class="updated">최종 업데이트: 2026년 10월 9일</p>
+
+      <article>
+        <p class="summary"><strong>요약:</strong> Joy of Nav는 게임패드로 현재 웹 페이지를 탐색하는 데 필요한 정보를 사용자의 브라우저 안에서 처리합니다. 개발자 서버로 페이지 내용, 게임패드 입력, 입력란 값을 보내거나 광고·분석 목적으로 사용하지 않습니다.</p>
+
+        <h2>1. 적용 범위</h2>
+        <p>이 방침은 Joy of Nav Chrome 확장 프로그램에 적용됩니다. 이 확장 프로그램은 표준 게임패드로 웹 페이지의 조작 요소를 탐색하고, 가상 커서와 합성 입력으로 페이지를 조작하도록 돕습니다.</p>
+
+        <h2>2. 처리하는 정보와 이용 목적</h2>
+        <p>아래 정보는 확장 프로그램의 탐색 기능을 제공하는 데 필요한 범위에서만 브라우저 안에서 처리합니다.</p>
+
+        <h3>게임패드 입력과 탐색 상태</h3>
+        <p>현재 포커스된 탭에서 게임패드가 연결되어 있을 때 버튼·스틱의 현재 상태, 가상 커서 위치, 탐색 선택과 스크롤 상태를 읽어 입력을 처리합니다. 이 정보는 실행 중 메모리에서만 사용하며 입력 기록을 만들거나 저장하지 않습니다.</p>
+
+        <h3>웹 페이지의 조작 요소</h3>
+        <p>화면에서 탐색할 수 있는 링크, 버튼, 입력란, iframe 등의 종류와 표시 상태·위치를 확인해 spotlight와 선택 순서를 계산합니다. 사용자가 링크를 가운데 클릭하면 해당 링크 주소를 Chrome에 전달해 새 배경 탭을 엽니다. 활성 탭의 제목은 팝업에 표시할 때 브라우저 안에서 읽습니다.</p>
+
+        <h3>입력란의 현재 값</h3>
+        <p>게임패드 방향키로 입력란의 커서를 움직이거나 숫자·범위 입력을 조정할 때, 해당 입력란의 현재 값 또는 선택 위치를 일시적으로 읽거나 변경할 수 있습니다. 여러 줄 입력란에서는 커서 이동을 계산하기 위해 현재 텍스트를 읽을 수 있습니다. 비밀번호 입력란에서는 커서 위치를 제한하는 데 필요한 값의 길이만 사용합니다. 이 정보는 저장하거나 개발자에게 전송하지 않습니다.</p>
+
+        <h3>설정과 iframe 탐색 경로</h3>
+        <p>사용자가 정한 데드존, spotlight 크기, 입력 임계값, 속도 곡선 등의 설정은 Chrome 확장 프로그램 저장소에 저장해 다음 실행에도 유지합니다. iframe 탐색을 위한 프레임 식별자와 경로는 세션 저장소에 임시 보관하며 세션이 끝나면 삭제됩니다.</p>
+
+        <h2>3. 저장 기간과 삭제</h2>
+        <ul>
+          <li>설정은 사용자가 변경하거나 확장 프로그램을 삭제할 때까지 이 기기의 Chrome 확장 프로그램 저장소에 남습니다.</li>
+          <li>iframe 프레임 정보와 탐색 경로는 세션 저장소에만 보관되며 브라우저 세션이 끝나면 삭제됩니다.</li>
+          <li>게임패드 입력, 커서 위치, 페이지 구조와 입력란 값은 기능을 실행하는 동안 메모리에서 처리하며 기록으로 저장하지 않습니다.</li>
+        </ul>
+
+        <h2>4. 제3자 제공과 외부 전송</h2>
+        <p>Joy of Nav는 개발자 서버, 분석 서비스 또는 광고 서비스에 연결하지 않습니다. 페이지 내용, 게임패드 입력, 입력란 값, 설정을 개발자나 다른 제3자에게 판매·전송하지 않습니다.</p>
+        <p>사용자가 게임패드로 웹 페이지의 링크를 열거나 버튼·폼을 실행하면 Chrome과 해당 웹사이트가 사용자의 브라우징 동작에 따라 통상적인 요청과 입력을 처리할 수 있습니다. 이때의 데이터 처리는 해당 웹사이트의 개인정보 처리방침을 따릅니다.</p>
+
+        <h2>5. 권한 사용</h2>
+        <ul>
+          <li><strong>storage:</strong> 사용자가 선택한 설정을 저장하고, iframe 탐색 경로를 현재 세션 동안 임시 유지합니다.</li>
+          <li><strong>scripting:</strong> 활성 탭에서 연결을 복구해야 할 때 확장 프로그램 패키지 안에 포함된 콘텐츠 스크립트를 다시 주입합니다. 원격 코드는 불러오거나 실행하지 않습니다.</li>
+          <li><strong>호스트 접근:</strong> 여러 웹사이트에서 탐색 요소를 찾고 게임패드 입력을 전달하기 위해 지원되는 페이지와 iframe에 접근합니다. Chrome 내부 페이지와 Chrome 웹 스토어 페이지는 Chrome 제한으로 지원되지 않습니다.</li>
+        </ul>
+
+        <h2>6. 사용자의 선택</h2>
+        <p>팝업에서 현재 페이지의 기능을 끄거나 설정 페이지에서 동작을 조정할 수 있습니다. Chrome 확장 프로그램 설정에서 사이트 접근 범위를 바꾸거나 확장 프로그램을 삭제할 수도 있습니다. 삭제하면 확장 프로그램에 저장된 설정도 제거됩니다.</p>
+
+        <h2>7. 방침 변경</h2>
+        <p>정보 처리 방식이 바뀌면 이 페이지의 내용을 갱신하고 최종 업데이트 날짜를 변경합니다.</p>
+
+        <h2 class="contact">문의</h2>
+        <p>개인정보 처리에 관한 문의는 <a href="https://github.com/m00nlygreat">Joy of Nav 개발자 GitHub 프로필</a>을 통해 보내 주세요.</p>
+      </article>
+      <footer>Joy of Nav · 개인정보 처리방침</footer>
+    </main>
+  </body>
+</html>
